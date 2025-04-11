@@ -64,3 +64,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Counter animation
+document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.count-up');
+    const speed = 200; // The lower the faster
+    
+    // Start the counter when it comes into view
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-count'));
+                let count = 0;
+                
+                const updateCount = () => {
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        count += increment;
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+});
