@@ -888,32 +888,58 @@ section {
 .navbar-container {
     position: relative;
     width: 100%;
+    height: 50px;
+    z-index: 100;
 }
 
+/* Make sure the navbar image is properly positioned */
 .navbar-image {
+    position: relative;
+    z-index: 1;
     width: 100%;
+    height: 50px;
 }
 
 .navbar-image img {
     width: 100%;
-    height: 50px; /* Adjust as needed */
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
+/* Fix logo positioning and display */
+.navbar-logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.navbar-logo img {
+    max-height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Ensure contact information is visible */
 .navbar-contact {
     position: absolute;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
+    z-index: 5;
     text-align: right;
-    color: white; /* Adjust color for visibility against your image */
-    font-size: 0.9rem;
+    color: white;
     line-height: 1.4;
 }
 
+.contact-email {
+    margin-bottom: 3px;
+}
+
 .navbar-contact a {
-    color: white; /* Adjust link color as needed */
+    color: white;
     text-decoration: none;
 }
 
