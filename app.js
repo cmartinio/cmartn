@@ -99,3 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
         counterObserver.observe(counter);
     });
 });
+// Animation for counter card progress bars
+document.addEventListener('DOMContentLoaded', function() {
+    const progressBars = document.querySelectorAll('.counter-card .stat-bar-inner');
+    
+    // Animate progress bars when they come into view
+    const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add a small delay to animate after the counter appears
+                setTimeout(() => {
+                    entry.target.style.transform = 'translateX(0)';
+                }, 500);
+                barObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    progressBars.forEach(bar => {
+        barObserver.observe(bar);
+    });
+});
