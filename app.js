@@ -1,91 +1,50 @@
-(function () {
-    [...document.querySelectorAll(".control")].forEach(button => {
-        button.addEventListener("click", function() {
-            document.querySelector(".active-btn").classList.remove("active-btn");
-            this.classList.add("active-btn");
-            document.querySelector(".active").classList.remove("active");
-            document.getElementById(button.dataset.id).classList.add("active");
-        })
-    });
-    document.querySelector(".theme-btn").addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
-    })
-})();
-// Add this to your app.js file
-document.addEventListener('DOMContentLoaded', function() {
-    // Get all certification badges
-    const certBadges = document.querySelectorAll('.cert-badge a');
+const controls = document.querySelectorAll('.control');
+const sections = document.querySelectorAll('.container');
+const themeBtn = document.querySelector('.theme-btn');
+
+// Section switching
+function switchSection(event) {
+    const control = event.target.closest('.control');
+    if (!control) return;
+
+    const id = control.dataset.id;
     
-    certBadges.forEach(badge => {
-        badge.addEventListener('click', function(e) {
-            // Prevent default link behavior 
-            e.preventDefault();
-            
-            // Get the image source
-            const imgSrc = this.querySelector('img').src;
-            
-            // Create lightbox elements
-            const lightbox = document.createElement('div');
-            lightbox.className = 'cert-lightbox';
-            
-            const lightboxContent = document.createElement('div');
-            lightboxContent.className = 'lightbox-content';
-            
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            
-            const closeBtn = document.createElement('span');
-            closeBtn.className = 'lightbox-close';
-            closeBtn.innerHTML = '&times;';
-            
-            // Build and append lightbox
-            lightboxContent.appendChild(img);
-            lightboxContent.appendChild(closeBtn);
-            lightbox.appendChild(lightboxContent);
-            document.body.appendChild(lightbox);
-            
-            // Handle closing
-            lightbox.addEventListener('click', function() {
-                document.body.removeChild(lightbox);
-            });
-            
-            // Stop propagation when clicking on the image itself
-            img.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-            
-            // After displaying, open the verification link in a new tab
-            setTimeout(() => {
-                const verifyLink = badge.href;
-                if (verifyLink && verifyLink !== '#') {
-                    window.open(verifyLink, '_blank');
-                }
-            }, 500);
-        });
+    // Update buttons
+    controls.forEach(btn => btn.classList.remove('active-btn'));
+    control.classList.add('active-btn');
+    
+    // Update sections
+    sections.forEach(section => {
+        section.classList.remove('active');
+        if(section.id === id) section.classList.add('active');
     });
-});
+}
+
+// Theme toggle
+function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+}
+
 // Counter animation
-document.addEventListener('DOMContentLoaded', function() {
+function animateCounters() {
     const counters = document.querySelectorAll('.count-up');
-    const speed = 200; // The lower the faster
+    const speed = 200;
     
-    // Start the counter when it comes into view
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-count'));
+                const target = parseInt(counter.dataset.count);
                 let count = 0;
                 
                 const updateCount = () => {
                     const increment = target / speed;
-                    
                     if (count < target) {
                         count += increment;
-                        counter.innerText = Math.ceil(count);
-                        setTimeout(updateCount, 1);
+                        counter.textContent = Math.ceil(count);
+                        requestAnimationFrame(updateCount);
                     } else {
-                        counter.innerText = target;
+                        counter.textContent = target;
                     }
                 };
                 
@@ -93,30 +52,50 @@ document.addEventListener('DOMContentLoaded', function() {
                 counterObserver.unobserve(counter);
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+}
+
+// Initialize everything
+document.addEventListener('DOMContentLoaded', () => {
+    // Event listeners
+    document.querySelector('.main-content').addEventListener('click', switchSection);
+    themeBtn.addEventListener('click', toggleTheme);
     
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
+    // Initial animations
+    animateCounters();
+    
+    // Form submission
+    document.querySelector('.contact-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Form submitted successfully!');
     });
 });
-// Animation for counter card progress bars
-document.addEventListener('DOMContentLoaded', function() {
-    const progressBars = document.querySelectorAll('.counter-card .stat-bar-inner');
+
+// Add this to your existing JavaScript
+function initializeExperienceSection() {
+    const expItems = document.querySelectorAll('.exp-item');
     
-    // Animate progress bars when they come into view
-    const barObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add a small delay to animate after the counter appears
-                setTimeout(() => {
-                    entry.target.style.transform = 'translateX(0)';
-                }, 500);
-                barObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-    
-    progressBars.forEach(bar => {
-        barObserver.observe(bar);
+    expItems.forEach((item, index) => {
+        // Add animation delays
+        item.style.transitionDelay = `${index * 0.2}s`;
+        
+        // Initialize Intersection Observer for each experience item
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(item);
     });
+}
+
+// Add to your DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', () => {
+    // Existing initializations...
+    initializeExperienceSection();
 });
