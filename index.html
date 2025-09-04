@@ -4,51 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Christian Martin — Cloud & Kubernetes Platform Architect</title>
+    <meta name="description" content="Christian Martin — Cloud & Kubernetes Platform Architect, Cybersecurity & SRE. I design secure, automated, and scalable infrastructure across cloud and on‑prem.">
+    <meta property="og:title" content="Christian Martin — Cloud & Kubernetes Platform Architect">
+    <meta property="og:description" content="Secure, automated, and scalable infrastructure across cloud and on‑prem. Kubernetes, DevSecOps, and AI enablement.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/logo-no-background.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Add display=swap to avoid FOIT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body class="main-content">
-    <div class="navbar-container">
+       <div class="navbar-container">
         <div class="navbar-image">
-            <img src="img/IMG_0183.jpeg" alt="Navbar Image">
+            <img src="img/IMG_0183.jpeg" alt="Aerial landscape photograph" loading="lazy" decoding="async">
         </div>
         <div class="navbar-logo">
-            <img src="img/logo-no-background.png" alt="Company Logo">
-        </div> 
+            <img src="img/logo-no-background.png" alt="CMARTN logo" loading="lazy" decoding="async">
+        </div>
         <div class="navbar-contact">
-            <div class="contact-email">
-                <span>Encrypted email: <a href="mailto:contact@cmartn.com">contact@cmartn.com</a>  <a href="https://keys.openpgp.org/search?q=cmartn%40proton.me">(2048 bit key)</a></span>
-            </div>
-            <div class="contact-email">
-                <span>Encrypted email: <a href="mailto:cmartn@pm.me">cmartn@pm.me </a>  <a href="https://keys.openpgp.org/search?q=cmartn%40proton.me">(2048 bit key)</a></span>
+            <div class="contact-email-container">
+                <div class="contact-email">
+                    <i class="fas fa-shield-alt"></i>
+                    <a href="mailto:contact@cmartn.com" class="email-primary">contact@cmartn.com</a>
+                    <a href="https://keys.openpgp.org/search?q=cmartn%40proton.me" class="pgp-link">
+                        <i class="fas fa-key"></i> PGP
+                    </a>
+                </div>
+                <div class="contact-email">
+                    <i class="fas fa-shield-alt"></i>
+                    <a href="mailto:cmartn@pm.me" class="email-secondary">cmartn@pm.me</a>
+                    <a href="https://keys.openpgp.org/search?q=cmartn%40proton.me" class="pgp-link">
+                        <i class="fas fa-key"></i> PGP
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <header class="container header active" id="home">
+
+    <!-- Sections as tabpanels for accessibility -->
+    <header class="container header active" id="home" role="tabpanel" aria-labelledby="tab-home" aria-hidden="false" tabindex="-1">
         <div class="header-content">
             <div class="left-header">
                 <div class="h-shape"></div>
                 <div class="image">
-                    <img src="img/IMG_7400_Original.jpeg" alt="">
+                    <img src="img/IMG_7400_Original.jpeg" alt="Portrait of Christian Martin" loading="eager" fetchpriority="high" decoding="async">
                 </div>
             </div>
             <div class="right-header">
-                <h3 class="name">
-                    Hi, I'm <span>Christian Martin.</span><br />
-                    <h3 class="sub-heading">Cloud & Kubernetes Platform Architect</h3>
-                    <h3 class="sub-heading">Cybersecurity & Site Reliability Engineer</h3>
-                </h3>
+                <!-- Proper heading structure -->
+                <h1 class="name">Hi, I'm <span>Christian Martin.</span></h1>
+                <h3 class="sub-heading">Platform Architect | Cybersecurity Specialist</h3>
+                <h3 class="sub-heading">Focus: Engineering Secure, Automated Infrastructure for AI/ML Workloads</h3>
 
-                                <!-- Add this where you want the counting cards to appear -->
+                <!-- Counter cards -->
                 <div class="counter-container">
-                    <!-- Existing card 1 (Cloud & DevOps) -->
+                    <!-- Card 1 -->
                     <div class="counter-card">
                         <div class="stat-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <div class="stat-content">
                             <h3><span class="count-up" data-count="10">0</span><span>+</span></h3>
@@ -58,11 +78,11 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Existing card 2 (Modules Authored) -->
+
+                    <!-- Card 2 -->
                     <div class="counter-card">
                         <div class="stat-icon">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-cogs" aria-hidden="true"></i>
                         </div>
                         <div class="stat-content">
                             <h3><span class="count-up" data-count="400">0</span><span>+</span></h3>
@@ -72,11 +92,11 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- NEW Card: Cloud Migration & SRE -->
+
+                    <!-- Card 3 -->
                     <div class="counter-card">
                         <div class="stat-icon">
-                            <i class="fas fa-cloud-upload-alt"></i>
+                            <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                         </div>
                         <div class="stat-content">
                             <h3><span class="count-up" data-count="8">0</span><span>+</span></h3>
@@ -86,11 +106,11 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- NEW Card: Cybersecurity -->
+
+                    <!-- Card 4 -->
                     <div class="counter-card">
                         <div class="stat-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                         </div>
                         <div class="stat-content">
                             <h3><span class="count-up" data-count="9">0</span><span>+</span></h3>
@@ -101,194 +121,286 @@
                         </div>
                     </div>
                 </div>
+<!-- Replace the current intro-text div with this new structure -->
+<div class="intro-card">
+    <div class="intro-card-content">
+        <div class="intro-header">
+            <i class="fas fa-quote-left" aria-hidden="true"></i>
+            <h3>Professional Overview</h3>
+        </div>
+        <div class="intro-text">
+            <p>
+                Welcome! This website provides references to my publicly-available professional work, open-source contributions, certifications, and a detailed overview of my skills and experience. 
+                All content is accessible within two clicks and is searchable via browser tools.
+            </p>
+            <p>
+                I am an IT professional with over ten years of experience architecting, securing, and automating modern infrastructure. My strategy is uniquely informed by a previous career in private equity, where I developed a rigorous analytical approach to complex risk and investment; a skill set I now apply to delivering high-value, cost-effective technical solutions.
+            </p>
+            <div class="specialty-highlight">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
                 <p>
-                    IT professional with over a decade of experience designing, securing, and automating modern infrastructure across cloud and on-prem environments. I specialize in Kubernetes orchestration, hybrid cloud architecture (AWS, GCP, Azure), and infrastructure-as-code for scalable, resilient deployments.
+                    Specializing in Kubernetes orchestration, hybrid cloud architecture (AWS, GCP, Azure), and infrastructure-as-code for scalable, resilient deployments.
                 </p>
+            </div>
+            <div class="current-focus">
+                <i class="fas fa-rocket" aria-hidden="true"></i>
                 <p>
                     My recent focus is on enabling AI adoption in enterprise environments, integrating on-prem LLMs using Ollama, building machine learning inference pipelines, and implementing Retrieval-Augmented Generation (RAG) to enhance model performance securely and efficiently.
                 </p>
-                <div class="btn-con">
-                    <a href="img/ResumeChristian.docx-3.pdf" class="main-btn" download="Christian_Martin_Resume.pdf">
-                        <span class="btn-text">Download CV</span>
-                        <span class="btn-icon"><i class="fas fa-download"></i></span>
-                    </a>
-                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <!-- Download CV Button -->
+            <div class="btn-container">
+    <div class="btn-con">
+        <a href="img/ResumeChristian.docx-3.pdf" class="main-btn" download="Christian_Martin_Resume.pdf">
+            <span class="btn-text">Download CV</span>
+            <span class="btn-icon"><i class="fas fa-download" aria-hidden="true"></i></span>
+        </a>
+    </div>
+</div>
+            
+            
             </div>
         </div>
     </header>
-    <main>
 
-        
-        <section class="container about" id="about">
+    <main>
+        <section class="container about" id="about" role="tabpanel" aria-labelledby="tab-about" aria-hidden="true" tabindex="-1">
             <div class="main-title">
                 <h2>About <span>me</span><span class="bg-text">my stats</span></h2>
             </div>
             <div class="about-container">
-                <div class="left-about">
-                    <h4>Who I Am & What I Build</h4>
+                               <div class="left-about">
+                    <h4>Engineering Philosophy & Expertise</h4>
                     <p>
-                        I'm an IT professional with over a decade of experience architecting, securing, and automating hybrid infrastructure across cloud and on-prem environments. I specialize in Kubernetes orchestration, hybrid cloud architecture (AWS, Azure, GCP), and infrastructure-as-code with Terraform, Ansible, and Python for scalable, secure deployments.<p>
-</p>
-                        My expertise includes CI/CD pipeline design, observability with the ELK stack, threat hunting, network security, and containerization across platforms like VMware vSphere and Linux-based systems (RHEL, Ubuntu). I consult on Red Hat OpenShift deployments, guiding secure and efficient application delivery across enterprise environments.<br />
-                        
-                        <p>
-                        Currently, I focus on enabling AI adoption—integrating on-prem LLMs with Ollama, building ML inference pipelines, and implementing secure Retrieval-Augmented Generation (RAG) architectures. Whether modernizing legacy systems or deploying cloud-native AI workloads, I bring a hands-on, automation-first, and security-driven approach to infrastructure engineering. 
+                        Principal Solutions Architect with extensive experience in designing and implementing enterprise-grade distributed systems and cloud-native architectures. Specialized in building robust, scalable infrastructure solutions that bridge traditional data centers with modern cloud platforms.
                     </p>
-
+                
+                    <div class="expertise-areas">
+                        <ul>
+                            <li>
+                                <strong>Cloud Architecture & Infrastructure:</strong> 
+                                Design and implementation of multi-cloud solutions leveraging AWS (Amazon Web Services), Microsoft Azure, and Google Cloud Platform, integrated with on-premises VMware vSphere environments for optimal hybrid deployment strategies.
+                            </li>
+                            <li>
+                                <strong>Container Orchestration & Microservices:</strong>
+                                Enterprise-scale Kubernetes architecture, focusing on high availability cluster design, service mesh implementation, and automated deployment pipelines for microservices-based applications.
+                            </li>
+                            <li>
+                                <strong>Infrastructure Automation:</strong>
+                                Development of infrastructure as code (IaC) solutions using HashiCorp stack (Terraform, Packer, Vault) and Red Hat Ansible, enabling repeatable, version-controlled infrastructure deployment and configuration management.
+                            </li>
+                            <li>
+                                <strong>Platform Engineering & SRE:</strong>
+                                Implementation of comprehensive DevSecOps practices, including automated CI/CD pipelines, observability solutions (ELK stack, Prometheus, Grafana), and incident response frameworks adhering to SRE principles.
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <p class="current-focus">
+                        Currently advancing the integration of artificial intelligence and machine learning capabilities within enterprise infrastructures, with particular emphasis on:
+                    </p>
+                    <ul class="focus-areas">
+                        <li>Architecting and deploying on-premises Large Language Models (LLMs) with enterprise-grade security controls</li>
+                        <li>Developing secure Retrieval-Augmented Generation (RAG) architectures for sensitive enterprise data</li>
+                        <li>Implementing MLOps practices for sustainable AI infrastructure management</li>
+                    </ul>
+                
                     <div class="btn-con">
                         <a href="img/ResumeChristian.docx-3.pdf" class="main-btn" download="Christian_Martin_Resume.pdf">
                             <span class="btn-text">Download CV</span>
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                            <span class="btn-icon"><i class="fas fa-download" aria-hidden="true"></i></span>
                         </a>
                     </div>
                 </div>
-                <div class="right-about">
-                    <!-- Modern stat counter cards with icons -->
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="counter">250<span>+</span></h3>
-                            <p>Projects & Contributions</p>
-                            <div class="stat-bar">
-                                <div class="stat-bar-inner"></div>
+
+                        <div class="right-about">
+                    <!-- Stat Summary -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                                <div class="stat-info">
+                                    <h3 class="counter">250<span>+</span></h3>
+                                    <p>Projects & Contributions</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="counter">10<span>+</span></h3>
-                            <p>Years in Cloud & DevOps</p>
-                            <div class="stat-bar">
-                                <div class="stat-bar-inner"></div>
+                
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                                <div class="stat-info">
+                                    <h3 class="counter">10<span>+</span></h3>
+                                    <p>Years in Cloud & DevOps</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="counter">300<span>+</span></h3>
-                            <p>Ansible Modules Authored</p>
-                            <div class="stat-bar">
-                                <div class="stat-bar-inner"></div>
+                
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <i class="fas fa-cogs" aria-hidden="true"></i>
+                                <div class="stat-info">
+                                    <h3 class="counter">300<span>+</span></h3>
+                                    <p>Ansible Modules Authored</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-cubes"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="counter">100<span>+</span></h3>
-                            <p>Terraform Modules Deployed</p>
-                            <div class="stat-bar">
-                                <div class="stat-bar-inner"></div>
+                
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <i class="fas fa-cubes" aria-hidden="true"></i>
+                                <div class="stat-info">
+                                    <h3 class="counter">100<span>+</span></h3>
+                                    <p>Terraform Modules Deployed</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="about-stats">
-                <h4 class="stat-title">Cloud, DevOps and SRE Skills</h4>
-                <div class="skills-container">
-                    <!-- Cloud Platforms -->
-                    <div class="skill-category">
-                        <h5 class="category-title">Cloud & Orchestration</h5>
-                        <div class="skill-cards">
-                            <div class="skill-card">
-                                <i class="fab fa-kubernetes"></i>
-                                <span>Kubernetes</span>
+                
+                              <div class="about-stats">
+                    <h4 class="stat-title">Technical Proficiencies</h4>
+                    <div class="skills-grid">
+                        <!-- Cloud & Orchestration -->
+                        <div class="skill-category">
+                            <div class="category-header">
+                                <i class="fas fa-cloud"></i>
+                                <h5>Cloud & Orchestration</h5>
                             </div>
-                            <div class="skill-card">
-                                <i class="fab fa-aws"></i>
-                                <span>AWS</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fab fa-microsoft"></i>
-                                <span>Azure</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fas fa-server"></i>
-                                <span>vSphere</span>
+                            <div class="skill-tags">
+                                <div class="skill-tag" title="Kubernetes Orchestration">
+                                    <i class="fab fa-kubernetes"></i>
+                                    <span>K8s</span>
+                                </div>
+                                <div class="skill-tag" title="Amazon Web Services">
+                                    <i class="fab fa-aws"></i>
+                                    <span>AWS</span>
+                                </div>
+                                <div class="skill-tag" title="Microsoft Azure">
+                                    <i class="fab fa-microsoft"></i>
+                                    <span>Azure</span>
+                                </div>
+                                <div class="skill-tag" title="VMware vSphere">
+                                    <i class="fas fa-server"></i>
+                                    <span>vSphere</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Observability -->
-                    <div class="skill-category">
-                        <h5 class="category-title">Observability & Monitoring</h5>
-                        <div class="skill-cards">
-                            <div class="skill-card">
+                
+                        <!-- Observability -->
+                        <div class="skill-category">
+                            <div class="category-header">
                                 <i class="fas fa-chart-line"></i>
-                                <span>Elasticsearch</span>
+                                <h5>Monitoring</h5>
                             </div>
-                            <div class="skill-card">
-                                <i class="fas fa-filter"></i>
-                                <span>Logstash</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fas fa-chart-pie"></i>
-                                <span>Kibana</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Infrastructure Automation -->
-                    <div class="skill-category">
-                        <h5 class="category-title">Infrastructure Automation</h5>
-                        <div class="skill-cards">
-                            <div class="skill-card">
-                                <i class="fas fa-cogs"></i>
-                                <span>Ansible</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fas fa-cubes"></i>
-                                <span>Terraform</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fas fa-box"></i>
-                                <span>Vagrant</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fas fa-clone"></i>
-                                <span>Packer</span>
+                            <div class="skill-tags">
+                                <div class="skill-tag" title="Elasticsearch">
+                                    <i class="fas fa-search"></i>
+                                    <span>ELK Stack</span>
+                                </div>
+                                <div class="skill-tag" title="Prometheus & Grafana">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <span>Splunk </span>
+                                </div>
+                                <div class="skill-tag" title="Datadog">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Prometheus & Grafana</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Cybersecurity -->
-                    <div class="skill-category">
-                        <h5 class="category-title">Cybersecurity</h5>
-                        <div class="skill-cards">
-                            <div class="skill-card">
+                
+                        <!-- Infrastructure -->
+                        <div class="skill-category">
+                            <div class="category-header">
+                                <i class="fas fa-robot"></i>
+                                <h5>Infrastructure automation</h5>
+                            </div>
+                            <div class="skill-tags">
+                                <div class="skill-tag" title="Ansible Automation">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Ansible</span>
+                                </div>
+                                <div class="skill-tag" title="Terraform IaC">
+                                    <i class="fas fa-cubes"></i>
+                                    <span>Terraform</span>
+                                </div>
+                                <div class="skill-tag" title="HashiCorp Stack">
+                                    <i class="fas fa-layer-group"></i>
+                                    <span>HashiCorp</span>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Security -->
+                        <div class="skill-category">
+                            <div class="category-header">
                                 <i class="fas fa-shield-alt"></i>
-                                <span>Kali Linux</span>
+                                <h5>Security</h5>
                             </div>
-                            <div class="skill-card">
-                                <i class="fas fa-network-wired"></i>
-                                <span>Wireshark</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fas fa-bug"></i>
-                                <span>Burpsuite</span>
-                            </div>
-                            <div class="skill-card">
-                                <i class="fas fa-search"></i>
-                                <span>Nmap</span>
+                            <div class="skill-tags">
+                                <div class="skill-tag" title="Network Security">
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Wireshark</span>
+                                </div>
+                                <div class="skill-tag" title="Security Tools">
+                                    <i class="fas fa-bug"></i>
+                                    <span>PenTest & Threat Hunting</span>
+                                </div>
+                                <div class="skill-tag" title="Zero Trust">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Nmap & Burpsuite</span>
+                                </div>
                             </div>
                         </div>
+    <!-- Prompt engineering -->
+                            <div class="skill-category">
+                                <div class="category-header">
+                                    <i class="fas fa-snowflake"></i>
+                                    <h5>Prompt Engineering</h5>
+                                </div>
+                                <div class="skill-tags">
+                                    <div class="skill-tag" title="Network Security">
+                                        <i class="fas fa-network-wired"></i>
+                                        <span>LangChain</span>
+                                    </div>
+                                    <div class="skill-tag" title="Security Tools">
+                                        <i class="fas fa-bug"></i>
+                                        <span>OpenAI Playground</span>
+                                    </div>
+                                    
+                                        
+                                        
+                                </div>
+                            </div>
+
+    <!-- Ai Inference Platform -->
+                            <div class="skill-category">
+                                <div class="category-header">
+                                    <i class="fas fa-snowflake"></i>
+                                    <h5>AI Inference Platform</h5>
+                                </div>
+                                <div class="skill-tags">
+                                    <div class="skill-tag" title="Network Security">
+                                        <i class="fas fa-network-wired"></i>
+                                        <span>Liquid cooled Hyperconverged Inference Platform</span>
+                                    </div>
+                                    <div class="skill-tag" title="Security Tools">
+                                        <i class="fas fa-bug"></i>
+                                        <span>HuggingFace, Ollama, LLMs</span>
+                                    </div>
+                                    
+                                        
+                                        
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
-            </div>
             <div class="about-stats">
                 <h4 class="stat-title">General Purpose Programming Languages</h4>
                 <div class="progress-bars">
@@ -320,7 +432,7 @@
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">ReactJS</p>
+                        <p class="prog-title">Java</p>
                         <div class="progress-con">
                             <p class="prog-text">75%</p>
                             <div class="progress">
@@ -329,7 +441,7 @@
                         </div>
                     </div>
                     <div class="progress-bar">
-                        <p class="prog-title">NodeJS</p>
+                        <p class="prog-title">Spring Boot</p>
                         <div class="progress-con">
                             <p class="prog-text">87%</p>
                             <div class="progress">
@@ -349,316 +461,249 @@
                 </div>
             </div>
 
+                   </section>
 
-
-
-
-            <h4 class="stat-title">My Timeline</h4>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2010 - present</p>
-                    <h5>Web Developer<span> - Vircrosoft</span></h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2008 - 2011</p>
-                    <h5>Software Engineer<span> - Boogle, Inc.</span></h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2016 - 2017</p>
-                    <h5>C++ Programmer<span> - Slime Tech</span></h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2009 - 2013</p>
-                    <h5>Business Degree<span> - Sussex University</span></h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2013 - 2016</p>
-                    <h5>Computer Science Degree<span> - Brookes University</span></h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <p class="tl-duration">2017 - present</p>
-                    <h5>3d Animation<span> - Brighton University</span></h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi vero fugit.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-                <section class="container" id="certifications">
+        <section class="container" id="certifications" role="tabpanel" aria-labelledby="tab-certifications" aria-hidden="true" tabindex="-1">
             <div class="main-title">
                 <h2>My <span>Certifications</span><span class="bg-text">Credentials</span></h2>
             </div>
             <p class="cert-text">
                 Professional certifications, courses and educational achievements that validate my expertise.
             </p>
-            
+
             <div class="certifications-container">
                 <!-- Certification Card 1 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-1.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-1.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
-                        <h3 class="cert-title">AWS Certified Solutions Architect</h3>
+                        <h3 class="cert-title">AWS Certified Solutions Architect Professional</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>Amazon Web Services</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: April 2023</span>
                         </div>
                         <p class="cert-description">
                             Validates expertise in designing distributed systems on AWS.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
-        
+
                 <!-- Certification Card 2 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-2.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-2.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
                         <h3 class="cert-title">Certified Kubernetes Administrator</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>Cloud Native Computing Foundation</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: January 2023</span>
                         </div>
                         <p class="cert-description">
                             Demonstrates ability to install, configure and manage Kubernetes clusters.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
-        
+
                 <!-- Certification Card 3 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-3.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-3.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
                         <h3 class="cert-title">Microsoft Azure Solutions Architect</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>Microsoft</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: November 2022</span>
                         </div>
                         <p class="cert-description">
                             Expertise in designing cloud and hybrid solutions on Microsoft Azure.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
-        
+
                 <!-- Certification Card 4 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-4.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-4.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
                         <h3 class="cert-title">HashiCorp Certified: Terraform Associate</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>HashiCorp</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: September 2022</span>
                         </div>
                         <p class="cert-description">
                             Validates expertise with Infrastructure-as-Code using Terraform.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
-        
+
                 <!-- Certification Card 5 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-5.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-5.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
                         <h3 class="cert-title">Red Hat Certified Engineer</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>Red Hat</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: August 2022</span>
                         </div>
                         <p class="cert-description">
                             Advanced Linux skills for system administration and automation.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
-        
+
                 <!-- Certification Card 6 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-6.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-6.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
                         <h3 class="cert-title">Certified Information Systems Security Professional</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>(ISC)²</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: July 2022</span>
                         </div>
                         <p class="cert-description">
                             Advanced security knowledge across multiple domains.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
-        
+
                 <!-- Certification Card 7 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-7.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-7.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
                         <h3 class="cert-title">Google Cloud Professional Architect</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>Google Cloud</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: May 2022</span>
                         </div>
                         <p class="cert-description">
                             Design, develop, and manage robust solutions on Google Cloud.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
-        
+
                 <!-- Certification Card 8 -->
                 <div class="cert-card">
                     <div class="cert-badge">
-                        <a href="https://www.credly.com/your-verification-link" target="_blank">
-                            <img src="img/cert-placeholder-8.png" alt="Certification Badge">
+                        <a href="https://www.credly.com/your-verification-link" target="_blank" rel="noopener noreferrer">
+                            <img src="img/cert-placeholder-8.png" alt="Certification Badge" loading="lazy" decoding="async">
                         </a>
                     </div>
                     <div class="cert-details">
                         <h3 class="cert-title">Cisco Certified Network Professional</h3>
                         <div class="cert-issuer">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
                             <span>Cisco</span>
                         </div>
                         <div class="cert-date">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
                             <span>Issued: March 2022</span>
                         </div>
                         <p class="cert-description">
                             Advanced network design, implementation, and troubleshooting skills.
                         </p>
-                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Verify
+                        <a href="https://www.credly.com/your-verification-link" class="verify-btn" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-                <!-- Work Experience & Education Section -->
-        <section class="container" id="experience">
+        <!-- Work Experience & Education Section -->
+        <section class="container" id="experience" role="tabpanel" aria-labelledby="tab-experience" aria-hidden="true" tabindex="-1">
             <div class="main-title">
                 <h2>Professional <span>Experience</span><span class="bg-text">Career</span></h2>
             </div>
-            
+
             <div class="experience-container">
                 <!-- Experience Timeline -->
                 <div class="exp-timeline">
                     <!-- Job 1 -->
                     <div class="exp-item">
                         <div class="exp-icon">
-                            <i class="fas fa-briefcase"></i>
+                            <i class="fas fa-briefcase" aria-hidden="true"></i>
                         </div>
-                        <span class="exp-date">2020 - Present</span>
-                        <h3 class="exp-title">Senior Cloud Platform Architect</h3>
-                        <h4 class="exp-company">Company Name, Location</h4>
+                        <span class="exp-date">2022 - Present</span>
+                        <h3 class="exp-title">Independent Consultant</h3>
+                        <h4 class="exp-company">Zurich, Switzerland</h4>
                         <div class="exp-content">
-                            <p>Led cloud-native architecture design and implementation for enterprise clients, specializing in Kubernetes orchestration, multi-cloud infrastructure, and DevSecOps practices.</p>
+                            <p>In building my independent consultancy, I architect and automate secure, highly available WordPress deployments on AWS and Azure using Terraform and Ansible, while also providing comprehensive cloud hosting and DNS solutions to ensure client business continuity. This professional endeavor was successfully established concurrently with my relocation to Switzerland and attainment of B-level proficiency in German.</p></p>
                             <ul class="exp-highlights">
-                                <li>Designed and deployed resilient Kubernetes clusters across AWS, GCP, and Azure</li>
-                                <li>Implemented zero-trust security architecture for enterprise cloud environments</li>
+                                <li>Cloud hosting and DNS solutions (AWS Route53, Cloudflare) for small businesses.</li>
+                                <li>Implemented zero-trust security architecture for small businesses and cloud environments</li>
                                 <li>Reduced deployment time by 70% through infrastructure-as-code and CI/CD pipeline optimization</li>
                             </ul>
                             <div class="exp-tech">
@@ -666,50 +711,198 @@
                                 <span>Terraform</span>
                                 <span>AWS</span>
                                 <span>Azure</span>
-                                <span>GCP</span>
+                                <span>Ansible</span>
+                                <span>WordPress</span>
+                                <span>PHP</span>
+                                <span>vSphere</span>
                             </div>
                         </div>
                     </div>
+  <!-- Job 2 -->
+                    <div class="exp-item">
+                        <div class="exp-icon">
+                            <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        </div>
+                        <span class="exp-date">11/2020 - 10/2022</span>
+                        <h3 class="exp-title">Senior Cloud Platform Architect</h3>
+                        <h4 class="exp-company">Riverside Church Organization and Legal, New York, USA</h4>
+                        <div class="exp-content">
+                            <p>Led cloud-native architecture design and implementation for enterprise clients, specializing in Kubernetes orchestration, multi-cloud infrastructure, and DevSecOps practices.</p>
+                            <ul class="exp-highlights">
+
+                                <li>Led the migration of a high-traffic WordPress site (1500 weekly visitors) to AWS, leveraging Nginx reverse
+proxy and caching to improve performance by 20%.</li>
+                                <li>Successfully migrated 300+ desktop clients for Riverside Church Organization to AWS Workspace during
+the pandemic peak as part of a VDI services initiative.</li>
+
+                                <li>Implemented automated AWS workflows using a combination of Python, Bash, CloudFormation, Ansible,
+and Terraform to streamline EBS encryption, AMI backups, and Lambda function scheduling.</li>
+
+                                <li>Implemented zero-trust security architecture for enterprise cloud environments</li>
+                                
+                            </ul>
+                            <div class="exp-tech">
+                                <span>vSphere</span>
+                                <span>Terraform</span>
+                                <span>Ansible</span>
+                                <span>Kubernetes</span>
+                                <span>Nginx</span>
+                                <span>Python</span>
+                                <span>Bash</span>
+                                <span>CloudFormation</span>
+                                <span>Lambda</span>
+                                <span>Elasticsearch</span>
+                                <span>Prometheus</span>
+                                <span>Grafana</span>
+                                <span>Splunk</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+
                     
+
                     <!-- Job 2 -->
                     <div class="exp-item">
                         <div class="exp-icon">
-                            <i class="fas fa-server"></i>
+                            <i class="fas fa-server" aria-hidden="true"></i>
                         </div>
-                        <span class="exp-date">2017 - 2020</span>
-                        <h3 class="exp-title">DevOps Engineer & SRE</h3>
-                        <h4 class="exp-company">Company Name, Location</h4>
+                        <span class="exp-date">11/2018 - 10/2020</span>
+                        <h3 class="exp-title">VMWARE Infrastructure and Systems Security Engineer</h3>
+                        <h4 class="exp-company">Riverside Church Organization and Legal, New York, USA</h4>
                         <div class="exp-content">
                             <p>Architected and maintained high-availability infrastructure supporting mission-critical applications. Implemented monitoring, logging, and alerting solutions to ensure optimal system performance.</p>
                             <ul class="exp-highlights">
-                                <li>Reduced infrastructure costs by 35% through resource optimization and cloud-native solutions</li>
-                                <li>Achieved 99.99% uptime for production services through redundant architecture</li>
-                                <li>Automated provisioning and configuration management with Ansible</li>
+                                <li>Optimized SharePoint 2016 deployment on vSphere with custom ESXi images using PowerCLI.</li>
+                                <li>Leveraged Terraform, Ansible, Bash, and Python to automate the provisioning, configuration, and management of VMware, Linux, and Windows environments.</li>
+                                <li>Automated provisioning and configuration management with Terraform and Ansible</li>
+                                <li>Implemented centralized logging and monitoring using the ELK stack and Prometheus/Grafana</li>
+                                <li>Implemented LEMP and LAMP stack deployments for web operations, ensuring consistent performance
+and adherence to service level objectives (SLOs)</li>
                             </ul>
                             <div class="exp-tech">
+                                <span>vSphere</span>
+                                <span>Terraform</span>
                                 <span>Ansible</span>
-                                <span>Docker</span>
+                                <span>vRealize Suite</span>
+                                <span>Nginx</span>
+                                <span>Python</span>
+                                <span>Bash</span>
                                 <span>Elasticsearch</span>
                                 <span>Prometheus</span>
-                                <span>Python</span>
+                                <span>Grafana</span>
+                                <span>Splunk</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Job 3 -->
+
+  <!-- Job 3 -->
                     <div class="exp-item">
                         <div class="exp-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-server" aria-hidden="true"></i>
                         </div>
-                        <span class="exp-date">2014 - 2017</span>
-                        <h3 class="exp-title">Cybersecurity Specialist</h3>
-                        <h4 class="exp-company">Company Name, Location</h4>
+                        <span class="exp-date">11/2018 - 10/2020</span>
+                        <h3 class="exp-title">Associate DevOps Engineer</h3>
+                        <h4 class="exp-company">Amazon Web Services (AWS) Inc, New York, USA</h4>
+                        <div class="exp-content">
+                            <p>Architected and maintained high-availability infrastructure supporting mission-critical applications. Implemented monitoring, logging, and alerting solutions to ensure optimal system performance.</p>
+                            <ul class="exp-highlights">
+                                <li>Conducted DevOps assessments, provided guidance on cloud adoption, and implemented DevOps
+methodologies using AWS tools like CodePipeline, CodeCommit, ECS, and EKS, resulting in improved
+team efficiency and optimized cloud utilization.</li>
+                                <li>Worked with customers to design CI/CD architectures, develop pipeline strategies, and, lead DevOps work
+streams for multi-account environments in the cloud</li>
+                                <li>Led project planning and delivery for telecom clients, leveraging the power of AWS Global services
+discovery infrastructure to ensure timely project completion and optimize cost efficiency.</li>
+                                <li>Assisted in creating code artifacts and implementing security check processes through 3rd party
+open-source tools like cfn-lint, cfn_nag, and, cloud custodian through Python and YAML deployment.</li>
+                            </ul>
+                            <div class="exp-tech">
+                                <span>Terraform</span>
+                                <span>Ansible</span>
+                                <span>AWS</span>
+                                <span>AWS Lambda</span>
+                                <span>AWS CodePipeline</span>
+                                <span>AWS CodeCommit</span>
+                                <span>AWS ECS</span>
+                                <span>AWS EKS</span>
+                                <span>AWS CloudWatch</span>
+                                <span>AWS Systems Manager</span>
+                                <span>AWS IAM</span>
+                                <span>AWS S3</span>
+                                <span>AWS CloudTrail</span>
+                                <span>AWS Well-Architected Framework</span>
+                                <span>AWS Control Tower</span>
+                                <span>AWS Organizations</span>
+                                <span>AWS Service Catalog</span>
+                                <span>AWS CloudFormation</span>
+                                <span>AWS CloudTrail</span>
+                                <span>Python</span>
+                                <span>Bash</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- Job 4 -->
+                    <div class="exp-item">
+                        <div class="exp-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <span class="exp-date">01/2016 - 10/2017</span>
+                        <h3 class="exp-title">Participant: Data Engineering Research</h3>
+                        <h4 class="exp-company">Google: Google cloud's Learning workshop, New York, USA</h4>
                         <div class="exp-content">
                             <p>Led security operations and threat intelligence efforts to protect enterprise infrastructure and data. Conducted security assessments and implemented defense-in-depth strategies.</p>
                             <ul class="exp-highlights">
-                                <li>Implemented comprehensive security monitoring solution using ELK stack</li>
-                                <li>Conducted penetration testing and vulnerability assessments</li>
-                                <li>Designed and deployed secure network architecture for multi-site operations</li>
+                                <li>Chosen as 1 of 87 participants for a 24-week developmental program focused on technical skills,
+Certification preparation, advanced programming projects (Python and Java), and Google Cloud Platform</li>
+                                <li>Acquired a profound comprehension of Terraform, Docker, Kubernetes, and Google Cloud Kubernetes
+Engine, and demonstrated adeptness in utilizing GKE's single-zone, multi-zone, and regional clusters to
+deploy and evaluate multi-tier, cloud-native applications.</li>
+                                
+                            </ul>
+                            <div class="exp-tech">
+                                <span>Kubernetes</span>
+                                <span>Terraform</span>
+                                <span>Docker</span>
+                                <span>GKE</span>
+                                <span>GCP</span>
+                                <span>Golang</span>
+                                <span>Python</span>
+                                <span>Bash</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+                    <!-- Job 5 -->
+                    <div class="exp-item">
+                        <div class="exp-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <span class="exp-date">04/2013 - 12/2015</span>
+                        <h3 class="exp-title">Infrastructure Analyst (CND)</h3>
+                        <h4 class="exp-company">iDefense Inc. (Contractor), Chantilly, VA</h4>
+                        <div class="exp-content">
+                            <p>Led security operations and threat intelligence efforts to protect enterprise infrastructure and data. Conducted security assessments and implemented defense-in-depth strategies.</p>
+                            <ul class="exp-highlights">
+                                <li>Conducted comprehensive penetration testing (Grey and Black box) of Azure cloud and hybrid
+environments, identifying critical vulnerabilities and providing detailed recommendations for
+remediation to enhance security posture</li>
+                                <li>leveraged Splunk to create viewable dashboards for log data, enabling tactical forensic analysis
+and proactive identification of adversarial activity through collected network data (Hunt Team).</li>
+                                <li>Enforce industry-standard security controls for regulatory compliance (PCI-DSS, SWIFT, NIST,
+ISO) and conduct security engineering and hardening on the latest operating systems following
+the CIS benchmarks.</li>
                             </ul>
                             <div class="exp-tech">
                                 <span>Network Security</span>
@@ -717,133 +910,302 @@
                                 <span>SIEM</span>
                                 <span>Wireshark</span>
                                 <span>Burpsuite</span>
+                                <span>Metasploit</span>
+                                <span>Nmap</span>
+                                <span>Splunk</span>
+                                <span>Python</span>
+                                <span>Bash</span>
+                                <span>PowerShell</span>
+                        
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                      <!-- Job 6 -->
+                    <div class="exp-item">
+                        <div class="exp-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <span class="exp-date">04/2013 - 12/2015</span>
+                        <h3 class="exp-title">Data Engineer</h3>
+                        <h4 class="exp-company">Gwynnie Bee, New York City</h4>
+                        <div class="exp-content">
+                            <p>Led security operations and threat intelligence efforts to protect enterprise infrastructure and data. Conducted security assessments and implemented defense-in-depth strategies.</p>
+                            <ul class="exp-highlights">
+                                <li>Successfully implemented the Honeywell Voyager MS9540 USB barcode scanner system with an
+application module using javax.comm to read input from the specified serial port, writing barcode
+data to a database for processing over 6 million garments</li>
+                                <li>Deployed MySQL on RedHat Enterprise Linux, establishing a data synchronization process
+between NetSuite and MySQL, and storing the data in Hadoop for large-scale analytics and reporting.</li>
+                        
+                            </ul>
+                            <div class="exp-tech">
+                                <span>RedHat Enterprise Linux</span>
+                                <span>Hadoop</span>
+                                <span>MySQL</span>
+                                <span>Java</span>
+                                <span>Python</span>
+                                <span>Bash</span>
+                                
+                        
+                            </div>
+                        </div>
+                    </div>
+
+<div class="exp-item">
+                        <div class="exp-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <span class="exp-date">02/2010-12/2012</span>
+                        <h3 class="exp-title">Credit Risk Analyst (contract)</h3>
+                        <h4 class="exp-company">Cerberus Capital Management LP, New York City</h4>
+                        <div class="exp-content">
+                            <p>Led security operations and threat intelligence efforts to protect enterprise infrastructure and data. Conducted security assessments and implemented defense-in-depth strategies.</p>
+                            <ul class="exp-highlights">
+                                <li>Worked on three major deals on the buy-side M&A: assisted three senior VPs with needed
+resources for presentations and deal memos on acquiring Steward Health Care System,
+Supervalu, and TransCentra.</li>
+                                <li>Prepared valuation using public company comparable, precedent transactions, and DCF; The
+analysis showed our targets were undervalued and neglected and was applied in negotiation,
+financial projections and eventually acquisition, completed quantitative and qualitative analyses
+cross the healthcare and retail consumer sectors.</li>
+<li>Cerberus’s potential $17 billion acquisition of Supervalu: worked with a team of VPs and
+provided needed resources to create a 5-year forecast for use in deal memos & presentations with
+creditors, lenders, and partners.</li>
+<li>Led a team of new 3 graduates on the equity valuation of TransCentra by conducting a due
+diligence session detailing business, financial, and accounting areas and analyzed comparable
+public companies by building a pro forma financial model, for a $5 billion acquisition.</li>
+</li>
+                            </ul>
+                            <div class="exp-tech">
+                                <span>Bloomberg Terminal</span>
+                                <span>Excel VBA</span>
+                                <span>Financial Modeling</span>
+                                <span>Valuation</span>
+                                <span>Due Diligence</span>
+                                <span>Market Research</span>
+                                <span>Microsoft Office</span>
+                                <span>Financial Analysis</span>
+                                <span>Risk Assessment</span>
+                                
+                        
+                            </div>
+                        </div>
+                    </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Education Section -->
+            <div class="main-title edu-title">
+                <h2>Education & <span>Training</span><span class="bg-text">Learning</span></h2>
+            </div>
+
+            <div class="education-container">
+                <div class="edu-grid">
+                    <!-- Formal Education -->
+                    <div class="edu-column">
+                        <h3 class="edu-subtitle"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Formal Education</h3>
+
+                        <div class="edu-card">
+                            <div class="edu-year">2010</div>
+                            <h4>Graduate Level courses in Computer science</h4>
+                            <h5>Groove School of Engineering/ City College of New York(CUNY) </h5>
+                            <p>Graduate Level courses in Computer science with a Focus on distributed systems, network architecture, and information security. Graduated with honors.</p>
+                        </div>
+
+                        <div class="edu-card">
+                            <div class="edu-year">2004 - 2007</div>
+                            <h4>BSc in Computer Engineering</h4>
+                            <h5>University of Cape Town (UCT)</h5>
+                    
+                        </div>
+                    </div>
+
+                    <!-- Professional Development -->
+                                      <div class="edu-column">
+                        <h3 class="edu-subtitle">
+                            <i class="fas fa-award" aria-hidden="true"></i> 
+                            Conferences & Professional Development
+                        </h3>
+                    
+                        <div class="professional-development">
+                            <!-- SANS Institute Section -->
+                            <div class="conference-group">
+                                <h4 class="group-title">SANS Institute Programs</h4>
+                                
+                                <div class="conference-card">
+                                    <div class="conference-header">
+                                        <h5>Cyber Threat Intelligence Summit</h5>
+                                        <span class="conference-date">January - May 2023</span>
+                                    </div>
+                                    <div class="conference-content">
+                                        <p>Advanced threat intelligence gathering and analysis using Splunk and SolarWinds for enterprise risk mitigation.</p>
+                                        <a href="https://1drv.ms/b/s!AvHvGcc8yJNoynspKsBXNttaUzLo?e=qN0ibe" class="cert-link" target="_blank">
+                                            <i class="fas fa-certificate" aria-hidden="true"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                    
+                                <div class="conference-card">
+                                    <div class="conference-header">
+                                        <h5>Cloud Security Exchange</h5>
+                                        <span class="conference-date">February - April 2023</span>
+                                    </div>
+                                    <div class="conference-content">
+                                        <p>Comprehensive cloud security strategies and best practices for enterprise environments.</p>
+                                        <a href="https://1drv.ms/b/s!AvHvGcc8yJNoynwJs51i42KF05wu?e=YlpScu" class="cert-link" target="_blank">
+                                            <i class="fas fa-certificate" aria-hidden="true"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                    
+                                <div class="conference-card">
+                                    <div class="conference-header">
+                                        <h5>Pen Test HackFest Summit & Training</h5>
+                                        <span class="conference-date">November 2021</span>
+                                    </div>
+                                    <div class="conference-content">
+                                        <p>Participated in the prestigious NetWars Tournament of Champions, focusing on advanced ethical hacking techniques.</p>
+                                        <a href="https://1drv.ms/b/s!AvHvGcc8yJNoynq6YYwQ_SKBmJA5?e=9gNTg7" class="cert-link" target="_blank">
+                                            <i class="fas fa-certificate" aria-hidden="true"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                    
+                                <div class="conference-card">
+                                    <div class="conference-header">
+                                        <h5>Digital Forensics and Incident Response Summit</h5>
+                                        <span class="conference-date">2021</span>
+                                    </div>
+                                    <div class="conference-content">
+                                        <p>Advanced network traffic analysis using tcpdump and Wireshark for sensitive data extraction and forensics.</p>
+                                        <a href="https://1drv.ms/b/s!AvHvGcc8yJNox2cYZRET1IuWXBpR" class="cert-link" target="_blank">
+                                            <i class="fas fa-certificate" aria-hidden="true"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Google Cloud Section -->
+                            <div class="conference-group">
+                                <h4 class="group-title">Google Cloud Specializations</h4>
+                                
+                                <div class="conference-card">
+                                    <div class="conference-header">
+                                        <h5>SRE and DevOps Engineer with Google Cloud</h5>
+                                        <span class="conference-date">October 2020 - Present</span>
+                                    </div>
+                                    <div class="conference-content">
+                                        <p>5-course Professional Certificate covering software delivery pipelines, service deployment, monitoring, incident management, and SRE principles.</p>
+                                        <div class="tech-tags">
+                                            <span>CI/CD</span>
+                                            <span>SRE</span>
+                                            <span>GCP</span>
+                                        </div>
+                                        <a href="https://coursera.org/share/89cc68442e7318cef7578012f19db38d" class="cert-link" target="_blank">
+                                            <i class="fas fa-certificate" aria-hidden="true"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
+                    
+                                <div class="conference-card">
+                                    <div class="conference-header">
+                                        <h5>Data Engineering, Big Data, and Machine Learning on GCP</h5>
+                                        <span class="conference-date">July - September 2019</span>
+                                    </div>
+                                    <div class="conference-content">
+                                        <p>5-course accelerated specialization in big data solutions design, architecture, analysis, and optimization.</p>
+                                        <div class="tech-tags">
+                                            <span>Big Data</span>
+                                            <span>ML</span>
+                                            <span>Data Engineering</span>
+                                        </div>
+                                        <a href="https://www.coursera.org/account/accomplishments/specialization/HWR93S2MUJLQ" class="cert-link" target="_blank">
+                                            <i class="fas fa-certificate" aria-hidden="true"></i> View Certificate
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Education Section -->
-            <div class="main-title edu-title">
-                <h2>Education & <span>Training</span><span class="bg-text">Learning</span></h2>
-            </div>
-            
-            <div class="education-container">
-                <div class="edu-grid">
-                    <!-- Formal Education -->
-                    <div class="edu-column">
-                        <h3 class="edu-subtitle"><i class="fas fa-graduation-cap"></i> Formal Education</h3>
-                        
-                        <div class="edu-card">
-                            <div class="edu-year">2010 - 2014</div>
-                            <h4>Bachelor of Science in Computer Science</h4>
-                            <h5>University Name</h5>
-                            <p>Focus on distributed systems, network architecture, and information security. Graduated with honors.</p>
-                        </div>
-                        
-                        <div class="edu-card">
-                            <div class="edu-year">2014 - 2016</div>
-                            <h4>Master of Science in Cybersecurity</h4>
-                            <h5>University Name</h5>
-                            <p>Research focus on cloud security and zero-trust architecture. Thesis on secure multi-cloud deployments.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Professional Development -->
-                    <div class="edu-column">
-                        <h3 class="edu-subtitle"><i class="fas fa-award"></i> Professional Development</h3>
-                        
-                        <div class="edu-card">
-                            <div class="edu-year">2022</div>
-                            <h4>Advanced Kubernetes Security</h4>
-                            <h5>Cloud Native Computing Foundation</h5>
-                            <p>Specialized training on securing container orchestration platforms and implementing policy-as-code.</p>
-                        </div>
-                        
-                        <div class="edu-card">
-                            <div class="edu-year">2021</div>
-                            <h4>AI & Machine Learning for DevOps</h4>
-                            <h5>Institution Name</h5>
-                            <p>Applied machine learning techniques for infrastructure optimization and anomaly detection.</p>
-                        </div>
-                        
-                        <div class="edu-card">
-                            <div class="edu-year">2019</div>
-                            <h4>Advanced Cloud Architecture</h4>
-                            <h5>Institution Name</h5>
-                            <p>Multi-cloud design patterns, serverless architecture, and cost optimization strategies.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
-        <section class="container contact" id="contact">
+
+        <section class="container contact" id="contact" role="tabpanel" aria-labelledby="tab-contact" aria-hidden="true" tabindex="-1">
             <div class="contact-container">
                 <div class="main-title">
                     <h2>Contact <span>Me</span><span class="bg-text">Contact</span></h2>
                 </div>
-                
+
                 <div class="contact-content">
                     <div class="contact-info-container">
                         <h4 class="contact-subtitle">Let's Connect</h4>
                         <p class="contact-desc">
                             I'm open to consulting opportunities, technical advisory roles, and infrastructure architecture projects.
                         </p>
-                        
+
                         <!-- Contact Cards -->
                         <div class="contact-cards">
                             <div class="contact-card">
                                 <div class="card-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 </div>
                                 <div class="card-details">
                                     <h5>Location</h5>
                                     <p>Zurich, Switzerland</p>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-card">
                                 <div class="card-icon">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
                                 </div>
                                 <div class="card-details">
                                     <h5>Email</h5>
                                     <p>contact@cmartn.com</p>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-card">
                                 <div class="card-icon">
-                                    <i class="fas fa-lock"></i>
+                                    <i class="fas fa-lock" aria-hidden="true"></i>
                                 </div>
                                 <div class="card-details">
                                     <h5>Encrypted Email</h5>
                                     <p>cmartn@pm.me <a href="https://keys.openpgp.org/search?q=cmartn%40proton.me">(2048 bit key)</a></p>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-card">
                                 <div class="card-icon">
-                                    <i class="fas fa-phone-alt"></i>
+                                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
                                 </div>
                                 <div class="card-details">
                                     <h5>Phone</h5>
-                                    <p>076 266 5579</p>
+                                    <p>+41 76 266 5579</p>
                                 </div>
                             </div>
-                            
+
                             <div class="contact-card">
                                 <div class="card-icon">
-                                    <i class="fas fa-globe"></i>
+                                    <i class="fas fa-globe" aria-hidden="true"></i>
                                 </div>
                                 <div class="card-details">
                                     <h5>Languages</h5>
                                     <p>English, German, French</p>
                                 </div>
                             </div>
-                                                        <div class="contact-card">
+
+                            <div class="contact-card">
                                 <div class="card-icon">
-                                    <i class="fas fa-comment-alt"></i>
+                                    <i class="fas fa-comment-alt" aria-hidden="true"></i>
                                 </div>
                                 <div class="card-details">
                                     <h5>Signal</h5>
@@ -851,27 +1213,27 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Social Links -->
                         <div class="social-links">
                             <h5>Find me on</h5>
                             <div class="social-icons">
-                                <a href="https://github.com" target="_blank" class="social-icon">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://github.com/cmartinio" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://linkedin.com" target="_blank" class="social-icon">
-                                    <i class="fab fa-linkedin-in"></i>
+                                <a href="https://linkedin.com/in/cmartinio" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://twitter.com" target="_blank" class="social-icon">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="https://twitter.com/cmartn_" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://youtube.com" target="_blank" class="social-icon">
-                                    <i class="fab fa-youtube"></i>
+                                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+                                    <i class="fab fa-youtube" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Contact Form -->
                     <div class="contact-form-container">
                         <h4 class="contact-subtitle">Send Me a Message</h4>
@@ -886,20 +1248,20 @@
                                     <input type="email" id="email" placeholder="john@example.com">
                                 </div>
                             </div>
-                            
+
                             <div class="input-group">
                                 <label for="subject">Subject</label>
                                 <input type="text" id="subject" placeholder="How can I help you?">
                             </div>
-                            
+
                             <div class="input-group">
                                 <label for="message">Message</label>
                                 <textarea id="message" rows="6" placeholder="Your message here..."></textarea>
                             </div>
-                            
+
                             <button type="submit" class="submit-btn">
                                 <span>Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
                             </button>
                         </form>
                     </div>
@@ -908,29 +1270,34 @@
         </section>
     </main>
 
-    <div class="controls">
-    <div class="control active-btn" data-id="home">
-        <i class="fas fa-home"></i>
-    </div>
-    <div class="control" data-id="about">
-        <i class="fas fa-user"></i>
-    </div>
-    <div class="control" data-id="certifications">
-        <i class="fas fa-certificate"></i>
-    </div>
-    <div class="control" data-id="experience">
-        <i class="fas fa-briefcase"></i>
-    </div>
-    <div class="control" data-id="contact">
-        <i class="fas fa-envelope-open"></i>
-    </div>
-</div>
-    <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
-    </div>
-    <script src="app.js"></script>
+    <!-- Accessible tab controls -->
+    <nav class="controls" role="tablist" aria-label="Section tabs">
+        <button class="control active-btn" id="tab-home" role="tab" aria-selected="true" aria-controls="home" data-id="home" tabindex="0" aria-label="Home">
+            <i class="fas fa-home" aria-hidden="true"></i>
+        </button>
+        <button class="control" id="tab-about" role="tab" aria-selected="false" aria-controls="about" data-id="about" tabindex="-1" aria-label="About">
+            <i class="fas fa-user" aria-hidden="true"></i>
+        </button>
+        <button class="control" id="tab-certifications" role="tab" aria-selected="false" aria-controls="certifications" data-id="certifications" tabindex="-1" aria-label="Certifications">
+            <i class="fas fa-certificate" aria-hidden="true"></i>
+        </button>
+        <button class="control" id="tab-experience" role="tab" aria-selected="false" aria-controls="experience" data-id="experience" tabindex="-1" aria-label="Experience">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+        </button>
+        <button class="control" id="tab-contact" role="tab" aria-selected="false" aria-controls="contact" data-id="contact" tabindex="-1" aria-label="Contact">
+            <i class="fas fa-envelope-open" aria-hidden="true"></i>
+        </button>
+    </nav>
+
+    <!-- Theme toggle as a real button -->
+    <button class="theme-btn" id="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+        <i class="fas fa-adjust" aria-hidden="true"></i>
+    </button>
+
+    <script src="app.js" defer></script>
+
     <div class="navbar-image bottom-navbar">
-        <img src="img/IMG_0183.jpeg" alt="Bottom Navbar Image">
+        <img src="img/IMG_0183.jpeg" alt="Aerial landscape photograph" loading="lazy" decoding="async">
     </div>
 </body>
 </html>
