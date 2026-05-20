@@ -1,7 +1,6 @@
 (() => {
     'use strict';
 
-    // --- DOM refs ---
     const html = document.documentElement;
     const nav = document.getElementById('nav');
     const scrollProgress = document.getElementById('scrollProgress');
@@ -11,7 +10,7 @@
     const backToTop = document.getElementById('backToTop');
     const contactForm = document.getElementById('contactForm');
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    const mobileLinks = document.querySelectorAll('.mobile-link[href^="#"]');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
     const sections = document.querySelectorAll('.section, .hero');
     const reveals = document.querySelectorAll('.reveal');
     const counters = document.querySelectorAll('.hero-stat-number[data-count]');
@@ -28,6 +27,7 @@
     function applyTheme(theme) {
         html.setAttribute('data-theme', theme);
         localStorage.setItem(THEME_KEY, theme);
+        syncXWidgetTheme(theme);
     }
 
     applyTheme(getPreferredTheme());
@@ -39,7 +39,25 @@
         });
     }
 
-    // --- Scroll: nav state, progress bar, active link, back-to-top ---
+    // --- X/Twitter widget theme sync ---
+    function syncXWidgetTheme(theme) {
+        const container = document.getElementById('xEmbed');
+        if (!container) return;
+        const iframe = container.querySelector('iframe');
+        if (iframe) {
+            iframe.remove();
+            const link = container.querySelector('a.twitter-timeline');
+            if (link) link.setAttribute('data-theme', theme);
+            if (window.twttr && window.twttr.widgets) {
+                window.twttr.widgets.load(container);
+            }
+        } else {
+            const link = container.querySelector('a.twitter-timeline');
+            if (link) link.setAttribute('data-theme', theme);
+        }
+    }
+
+    // --- Scroll handlers ---
     let ticking = false;
 
     function onScroll() {
@@ -49,22 +67,18 @@
             const scrollY = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-            // Nav scrolled state
-            if (nav) {
+            if (nav && !nav.classList.contains('scrolled-permanent')) {
                 nav.classList.toggle('scrolled', scrollY > 50);
             }
 
-            // Scroll progress
             if (scrollProgress && docHeight > 0) {
                 scrollProgress.style.width = ((scrollY / docHeight) * 100) + '%';
             }
 
-            // Back to top
             if (backToTop) {
                 backToTop.classList.toggle('visible', scrollY > 400);
             }
 
-            // Active nav link
             let currentSection = '';
             sections.forEach(section => {
                 const top = section.offsetTop - 120;
@@ -84,7 +98,6 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // --- Back to top ---
     if (backToTop) {
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -93,6 +106,7 @@
 
     // --- Mobile menu ---
     function closeMobileMenu() {
+        if (!hamburger || !mobileMenu) return;
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         mobileMenu.classList.remove('open');
@@ -117,7 +131,7 @@
         });
     }
 
-    // --- Smooth scroll for nav links ---
+    // --- Smooth scroll ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', e => {
             const id = anchor.getAttribute('href');
@@ -130,7 +144,7 @@
         });
     });
 
-    // --- Reveal on scroll (Intersection Observer) ---
+    // --- Reveal on scroll ---
     if (reveals.length) {
         const revealObserver = new IntersectionObserver(
             entries => {
@@ -141,7 +155,7 @@
                     }
                 });
             },
-            { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+            { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
         );
         reveals.forEach(el => revealObserver.observe(el));
     }
@@ -192,10 +206,22 @@
         });
     }
 
-    // --- Keyboard: Escape closes mobile menu ---
+    // --- Escape closes mobile menu ---
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
             closeMobileMenu();
+        }
+    });
+
+    // --- Set initial X widget theme after Twitter JS loads ---
+    window.addEventListener('load', () => {
+        const theme = html.getAttribute('data-theme') || 'light';
+        const link = document.querySelector('#xEmbed a.twitter-timeline');
+        if (link) {
+            link.setAttribute('data-theme', theme);
+            if (window.twttr && window.twttr.widgets) {
+                window.twttr.widgets.load(document.getElementById('xEmbed'));
+            }
         }
     });
 })();

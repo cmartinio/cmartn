@@ -39,7 +39,7 @@
                     <i class="fa-solid fa-sun theme-icon-light"></i>
                     <i class="fa-solid fa-moon theme-icon-dark"></i>
                 </button>
-                <a href="img/ResumeChristian.docx-3.pdf" class="nav-cta" download="Christian_Martin_CV.pdf">
+                <a href="img/Christian_Martin_Resume002.pdf" class="nav-cta" download="Christian_Martin_CV.pdf">
                     Download CV
                 </a>
             </div>
@@ -58,41 +58,90 @@
             <a href="blog.html" class="mobile-link">Blog</a>
             <a href="#contact" class="mobile-link">Contact</a>
             <div class="mobile-divider"></div>
-            <a href="img/ResumeChristian.docx-3.pdf" class="mobile-link" download="Christian_Martin_CV.pdf">Download CV</a>
+            <a href="img/Christian_Martin_Resume002.pdf" class="mobile-link" download="Christian_Martin_CV.pdf">Download CV</a>
         </div>
     </div>
 
     <main>
         <!-- Hero -->
         <section class="hero" id="home">
-            <div class="hero-container">
-                <div class="hero-label reveal">Solutions Architect &middot; Zurich, Switzerland</div>
-                <h1 class="hero-title reveal">Christian Martin</h1>
-                <p class="hero-subtitle reveal">
-                    Designing secure, automated infrastructure at scale &mdash; from enterprise cloud
-                    platforms to AI-ready environments.
-                </p>
-                <div class="hero-stats reveal">
-                    <div class="hero-stat">
-                        <span class="hero-stat-number" data-count="10">0</span><span class="hero-stat-plus">+</span>
-                        <span class="hero-stat-label">Years in Cloud &amp; DevOps</span>
+            <div class="hero-container hero-split">
+                <div class="hero-content">
+                    <div class="hero-label reveal">Solutions Architect &middot; Zurich, Switzerland</div>
+                    <h1 class="hero-title reveal">Christian Martin</h1>
+                    <p class="hero-subtitle reveal">
+                        Designing secure, automated infrastructure at scale &mdash; from enterprise cloud
+                        platforms to AI-ready environments.
+                    </p>
+                    <div class="hero-stats reveal">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number" data-count="10">0</span><span class="hero-stat-plus">+</span>
+                            <span class="hero-stat-label">Years in Cloud &amp; DevOps</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number" data-count="400">0</span><span class="hero-stat-plus">+</span>
+                            <span class="hero-stat-label">IaC Modules Authored</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number" data-count="9">0</span><span class="hero-stat-plus">+</span>
+                            <span class="hero-stat-label">Years in Cybersecurity</span>
+                        </div>
                     </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number" data-count="400">0</span><span class="hero-stat-plus">+</span>
-                        <span class="hero-stat-label">IaC Modules Authored</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number" data-count="9">0</span><span class="hero-stat-plus">+</span>
-                        <span class="hero-stat-label">Years in Cybersecurity</span>
+                    <div class="hero-actions reveal">
+                        <a href="#experience" class="btn btn-primary">View Experience</a>
+                        <a href="#contact" class="btn btn-outline">Get in Touch</a>
                     </div>
                 </div>
-                <div class="hero-actions reveal">
-                    <a href="#experience" class="btn btn-primary">View Experience</a>
-                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                <div class="hero-portrait reveal">
+                    <img src="img/IMG_7400_Original.jpeg" alt="Christian Martin" loading="eager">
                 </div>
             </div>
-            <div class="hero-scroll-hint" aria-hidden="true">
-                <div class="scroll-line"></div>
+        </section>
+
+        <!-- Latest: Articles + X Feed -->
+        <section class="section section-alt" id="latest">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <span class="section-label">Latest</span>
+                    <h2 class="section-title">Recent Writing &amp; Activity</h2>
+                </div>
+                <div class="latest-grid">
+                    <div class="latest-articles">
+                        <h3 class="latest-subheading">From the Blog</h3>
+                        <a href="posts/building-inference-platform.html" class="article-preview reveal">
+                            <span class="article-tag">Infrastructure</span>
+                            <h4 class="article-title">Building a Liquid-Cooled Hyperconverged Inference Platform</h4>
+                            <p class="article-excerpt">
+                                A deep dive into designing and assembling a custom liquid-cooled homelab
+                                optimized for running local LLMs at scale with Proxmox and vGPU passthrough.
+                            </p>
+                            <span class="article-meta">May 2026 &middot; 8 min read</span>
+                        </a>
+                        <a href="posts/benchmarking-local-llms.html" class="article-preview reveal">
+                            <span class="article-tag">AI / ML</span>
+                            <h4 class="article-title">Benchmarking DeepSeek, Qwen &amp; Gemma on Consumer Hardware</h4>
+                            <p class="article-excerpt">
+                                Performance comparisons of the latest open-weight models running locally
+                                via Ollama, including VRAM usage, tokens/sec, and quality assessments.
+                            </p>
+                            <span class="article-meta">May 2026 &middot; 12 min read</span>
+                        </a>
+                        <a href="blog.html" class="view-all-link reveal">View all articles &rarr;</a>
+                    </div>
+                    <div class="latest-social reveal">
+                        <h3 class="latest-subheading">On X</h3>
+                        <div class="x-embed-container" id="xEmbed">
+                            <a class="twitter-timeline"
+                               href="https://twitter.com/cmartn_"
+                               data-tweet-limit="3"
+                               data-chrome="noheader nofooter noborders transparent"
+                               data-dnt="true"
+                               data-theme="light">
+                               Loading posts from @cmartn_&hellip;
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -138,7 +187,6 @@
                                 <span class="skill-tag">Kubernetes</span>
                                 <span class="skill-tag">AWS</span>
                                 <span class="skill-tag">Azure</span>
-                                <span class="skill-tag">GCP</span>
                                 <span class="skill-tag">VMware vSphere</span>
                                 <span class="skill-tag">Docker</span>
                             </div>
@@ -160,7 +208,6 @@
                                 <span class="skill-tag">Grafana</span>
                                 <span class="skill-tag">ELK Stack</span>
                                 <span class="skill-tag">Splunk</span>
-                                <span class="skill-tag">Datadog</span>
                             </div>
                         </div>
                         <div class="skill-group">
@@ -174,14 +221,17 @@
                                 <span class="skill-tag">Burp Suite</span>
                             </div>
                         </div>
-                        <div class="skill-group">
-                            <h4 class="skill-group-title">AI &amp; ML Infrastructure</h4>
+                        <div class="skill-group skill-group-highlight">
+                            <h4 class="skill-group-title">AI &amp; ML Engineering</h4>
                             <div class="skill-tags">
+                                <span class="skill-tag skill-tag-accent">Claude Code</span>
+                                <span class="skill-tag skill-tag-accent">Anthropic API</span>
+                                <span class="skill-tag skill-tag-accent">OpenAI Codex</span>
                                 <span class="skill-tag">Ollama</span>
                                 <span class="skill-tag">HuggingFace</span>
-                                <span class="skill-tag">LangChain</span>
                                 <span class="skill-tag">RAG Pipelines</span>
                                 <span class="skill-tag">MLOps</span>
+                                <span class="skill-tag">Prompt Engineering</span>
                             </div>
                         </div>
                         <div class="skill-group">
@@ -189,10 +239,9 @@
                             <div class="skill-tags">
                                 <span class="skill-tag">Python</span>
                                 <span class="skill-tag">Java</span>
-                                <span class="skill-tag">Spring Boot</span>
                                 <span class="skill-tag">Bash</span>
-                                <span class="skill-tag">Go</span>
                                 <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">SQL</span>
                             </div>
                         </div>
                     </div>
@@ -308,7 +357,7 @@
                             </ul>
                             <div class="timeline-tech">
                                 <span>Kubernetes</span><span>Terraform</span><span>Docker</span><span>GKE</span>
-                                <span>GCP</span><span>Go</span><span>Python</span>
+                                <span>GCP</span><span>Python</span>
                             </div>
                         </div>
                     </div>
@@ -386,45 +435,93 @@
                     <h2 class="section-title">Certifications &amp; Professional Development</h2>
                 </div>
                 <div class="certs-grid">
-                    <div class="cert-card reveal">
-                        <span class="cert-issuer">Amazon Web Services</span>
-                        <h3 class="cert-name">AWS Certified Solutions Architect &mdash; Professional</h3>
-                        <span class="cert-date">Issued April 2023</span>
+                    <!-- CISSP — First and most prominent -->
+                    <div class="cert-card cert-card-featured reveal">
+                        <div class="cert-badge-img">
+                            <img src="img/certified-information-systems-security-professional-cissp.png" alt="CISSP Badge" loading="lazy">
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">(ISC)&sup2;</span>
+                            <h3 class="cert-name">Certified Information Systems Security Professional (CISSP)</h3>
+                            <span class="cert-date">Issued July 2022</span>
+                        </div>
                     </div>
+
                     <div class="cert-card reveal">
-                        <span class="cert-issuer">Cloud Native Computing Foundation</span>
-                        <h3 class="cert-name">Certified Kubernetes Administrator (CKA)</h3>
-                        <span class="cert-date">Issued January 2023</span>
+                        <div class="cert-badge-img">
+                            <img src="img/aws-certified-solutions-architect-professional.png" alt="AWS SA Pro Badge" loading="lazy">
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Amazon Web Services</span>
+                            <h3 class="cert-name">AWS Certified Solutions Architect &mdash; Professional</h3>
+                            <span class="cert-date">Issued April 2023</span>
+                        </div>
                     </div>
+
                     <div class="cert-card reveal">
-                        <span class="cert-issuer">Microsoft</span>
-                        <h3 class="cert-name">Azure Solutions Architect Expert</h3>
-                        <span class="cert-date">Issued November 2022</span>
+                        <div class="cert-badge-img cert-badge-placeholder">
+                            <span>CKA</span>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Cloud Native Computing Foundation</span>
+                            <h3 class="cert-name">Certified Kubernetes Administrator (CKA)</h3>
+                            <span class="cert-date">Issued January 2023</span>
+                        </div>
                     </div>
+
                     <div class="cert-card reveal">
-                        <span class="cert-issuer">HashiCorp</span>
-                        <h3 class="cert-name">Terraform Associate</h3>
-                        <span class="cert-date">Issued September 2022</span>
+                        <div class="cert-badge-img">
+                            <img src="img/microsoft-certified-azure-solutions-architect-expert.1.png" alt="Azure SA Expert Badge" loading="lazy">
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Microsoft</span>
+                            <h3 class="cert-name">Azure Solutions Architect Expert</h3>
+                            <span class="cert-date">Issued November 2022</span>
+                        </div>
                     </div>
+
                     <div class="cert-card reveal">
-                        <span class="cert-issuer">Red Hat</span>
-                        <h3 class="cert-name">Red Hat Certified Engineer (RHCE)</h3>
-                        <span class="cert-date">Issued August 2022</span>
+                        <div class="cert-badge-img cert-badge-placeholder">
+                            <span>TF</span>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">HashiCorp</span>
+                            <h3 class="cert-name">Terraform Associate</h3>
+                            <span class="cert-date">Issued September 2022</span>
+                        </div>
                     </div>
+
                     <div class="cert-card reveal">
-                        <span class="cert-issuer">(ISC)&sup2;</span>
-                        <h3 class="cert-name">Certified Information Systems Security Professional (CISSP)</h3>
-                        <span class="cert-date">Issued July 2022</span>
+                        <div class="cert-badge-img cert-badge-placeholder">
+                            <span>RH</span>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Red Hat</span>
+                            <h3 class="cert-name">Red Hat Certified Engineer (RHCE)</h3>
+                            <span class="cert-date">Issued August 2022</span>
+                        </div>
                     </div>
+
                     <div class="cert-card reveal">
-                        <span class="cert-issuer">Google Cloud</span>
-                        <h3 class="cert-name">Professional Cloud Architect</h3>
-                        <span class="cert-date">Issued May 2022</span>
+                        <div class="cert-badge-img cert-badge-placeholder">
+                            <span>GCP</span>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Google Cloud</span>
+                            <h3 class="cert-name">Professional Cloud Architect</h3>
+                            <span class="cert-date">Issued May 2022</span>
+                        </div>
                     </div>
+
                     <div class="cert-card reveal">
-                        <span class="cert-issuer">Cisco</span>
-                        <h3 class="cert-name">Certified Network Professional Enterprise (CCNP)</h3>
-                        <span class="cert-date">Issued March 2022</span>
+                        <div class="cert-badge-img">
+                            <img src="img/cisco-certified-network-professional-enterprise-ccnp-enterprise.png" alt="CCNP Badge" loading="lazy">
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">Cisco</span>
+                            <h3 class="cert-name">Certified Network Professional Enterprise (CCNP)</h3>
+                            <span class="cert-date">Issued March 2022</span>
+                        </div>
                     </div>
                 </div>
 
@@ -434,7 +531,7 @@
                         <div class="training-card">
                             <span class="training-org">SANS Institute</span>
                             <h4>Cyber Threat Intelligence Summit</h4>
-                            <p>Advanced threat intelligence gathering and analysis using Splunk and SolarWinds for enterprise risk mitigation.</p>
+                            <p>Advanced threat intelligence gathering and analysis using Splunk and SolarWinds.</p>
                             <span class="training-date">Jan &mdash; May 2023</span>
                         </div>
                         <div class="training-card">
@@ -452,19 +549,19 @@
                         <div class="training-card">
                             <span class="training-org">SANS Institute</span>
                             <h4>Digital Forensics &amp; Incident Response Summit</h4>
-                            <p>Advanced network traffic analysis using tcpdump and Wireshark for forensics and data extraction.</p>
+                            <p>Network traffic analysis using tcpdump and Wireshark for forensics and data extraction.</p>
                             <span class="training-date">2021</span>
                         </div>
                         <div class="training-card">
                             <span class="training-org">Google Cloud / Coursera</span>
                             <h4>SRE and DevOps Engineer with Google Cloud</h4>
-                            <p>5-course Professional Certificate covering CI/CD, service deployment, monitoring, and SRE principles.</p>
+                            <p>5-course Professional Certificate covering CI/CD, monitoring, and SRE principles.</p>
                             <span class="training-date">Oct 2020</span>
                         </div>
                         <div class="training-card">
                             <span class="training-org">Google Cloud / Coursera</span>
                             <h4>Data Engineering, Big Data &amp; ML on GCP</h4>
-                            <p>5-course specialization in big data solutions design, architecture, analysis, and optimization.</p>
+                            <p>5-course specialization in big data solutions design, architecture, and optimization.</p>
                             <span class="training-date">Jul &mdash; Sep 2019</span>
                         </div>
                     </div>
@@ -610,6 +707,7 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="app.js"></script>
 </body>
 </html>
