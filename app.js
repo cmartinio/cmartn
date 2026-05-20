@@ -1,261 +1,201 @@
-// Accessible, mobile-friendly section switching with deep linking and theme persistence
+(() => {
+    'use strict';
 
-// Cache nodes
-const body = document.body;
-const controlsRoot = document.querySelector('.controls');
-const controls = Array.from(document.querySelectorAll('.controls .control'));
-const sections = Array.from(document.querySelectorAll('.container'));
-const themeBtn = document.querySelector('.theme-btn');
+    // --- DOM refs ---
+    const html = document.documentElement;
+    const nav = document.getElementById('nav');
+    const scrollProgress = document.getElementById('scrollProgress');
+    const themeToggle = document.getElementById('themeToggle');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backToTop = document.getElementById('backToTop');
+    const contactForm = document.getElementById('contactForm');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const mobileLinks = document.querySelectorAll('.mobile-link[href^="#"]');
+    const sections = document.querySelectorAll('.section, .hero');
+    const reveals = document.querySelectorAll('.reveal');
+    const counters = document.querySelectorAll('.hero-stat-number[data-count]');
 
-// ---- Accessibility wiring for current div-based controls and sections ----
-function initA11y() {
-  // Treat controls container as a tablist
-  if (controlsRoot) {
-    controlsRoot.setAttribute('role', 'tablist');
-    controlsRoot.setAttribute('aria-label', 'Section tabs');
-  }
+    // --- Theme ---
+    const THEME_KEY = 'cmartn-theme';
 
-  // Make each control behave like a tab button
-  controls.forEach((ctrl) => {
-    const id = ctrl.dataset.id;
-    const tabId = `tab-${id}`;
-    ctrl.id = ctrl.id || tabId;
-    ctrl.setAttribute('role', 'tab');
-    ctrl.setAttribute('aria-controls', id);
-    ctrl.setAttribute('tabindex', ctrl.classList.contains('active-btn') ? '0' : '-1');
-    ctrl.setAttribute('aria-selected', ctrl.classList.contains('active-btn') ? 'true' : 'false');
-  });
-
-  // Make sections proper tabpanels
-  sections.forEach((section) => {
-    const id = section.id;
-    const labelledBy = `tab-${id}`;
-    section.setAttribute('role', 'tabpanel');
-    section.setAttribute('aria-labelledby', labelledBy);
-    section.setAttribute('tabindex', '-1');
-    const isActive = section.classList.contains('active');
-    section.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-  });
-
-  // Theme toggle as an accessible control
-  if (themeBtn) {
-    themeBtn.setAttribute('role', 'button');
-    themeBtn.setAttribute('tabindex', '0');
-    themeBtn.setAttribute('aria-label', 'Toggle color theme');
-    themeBtn.setAttribute('aria-pressed', 'false');
-  }
-}
-
-// ---- Navigation / state management ----
-function setActiveControl(targetCtrl) {
-  controls.forEach((ctrl) => {
-    const isSelected = ctrl === targetCtrl;
-    ctrl.classList.toggle('active-btn', isSelected);
-    ctrl.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-    ctrl.setAttribute('tabindex', isSelected ? '0' : '-1');
-  });
-}
-
-function setActiveSection(id) {
-  sections.forEach((section) => {
-    const isActive = section.id === id;
-    section.classList.toggle('active', isActive);
-    section.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-  });
-
-  const activeSection = sections.find((s) => s.id === id);
-  if (activeSection) {
-    const heading = activeSection.querySelector('h1, h2, h3, [tabindex="-1"]');
-    // Focus the section's first heading if available
-    if (heading && typeof heading.focus === 'function') {
-      heading.focus({ preventScroll: true });
-    } else {
-      activeSection.focus({ preventScroll: true });
+    function getPreferredTheme() {
+        const saved = localStorage.getItem(THEME_KEY);
+        if (saved === 'dark' || saved === 'light') return saved;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    // Smoothly scroll into view (mobile-friendly)
-    activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
 
-function activate(id, pushHash = true) {
-  const ctrl = controls.find((c) => c.dataset.id === id);
-  const section = sections.find((s) => s.id === id);
-  if (!ctrl || !section) return;
+    function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem(THEME_KEY, theme);
+    }
 
-  setActiveControl(ctrl);
-  setActiveSection(id);
+    applyTheme(getPreferredTheme());
 
-  if (pushHash && location.hash !== `#${id}`) {
-    history.pushState(null, '', `#${id}`);
-  }
-}
-
-// Click navigation
-function onControlsClick(e) {
-  const ctrl = e.target.closest('.control');
-  if (!ctrl || !controlsRoot.contains(ctrl)) return;
-  activate(ctrl.dataset.id);
-}
-
-// Keyboard navigation for tabs
-function onControlsKeydown(e) {
-  const activeEl = document.activeElement;
-  const idx = controls.indexOf(activeEl);
-  if (idx === -1) return;
-
-  let nextIdx = null;
-  switch (e.key) {
-    case 'ArrowRight':
-    case 'ArrowDown':
-      nextIdx = (idx + 1) % controls.length;
-      break;
-    case 'ArrowLeft':
-    case 'ArrowUp':
-      nextIdx = (idx - 1 + controls.length) % controls.length;
-      break;
-    case 'Home':
-      nextIdx = 0;
-      break;
-    case 'End':
-      nextIdx = controls.length - 1;
-      break;
-    case 'Enter':
-    case ' ':
-      activate(controls[idx].dataset.id);
-      e.preventDefault();
-      return;
-    default:
-      return;
-  }
-  controls[nextIdx].focus();
-  e.preventDefault();
-}
-
-// Hash routing for deep links
-function initRouting() {
-  const goToHash = () => {
-    const id = (location.hash || '#home').slice(1);
-    const exists = sections.some((s) => s.id === id);
-    activate(exists ? id : 'home', /* pushHash */ false);
-  };
-
-  window.addEventListener('hashchange', goToHash);
-  goToHash(); // initial load
-}
-
-// ---- Theme handling with persistence ----
-const THEME_KEY = 'pref-theme'; // 'light' | 'dark'
-
-function applyTheme(mode) {
-  const isLight = mode === 'light';
-  body.classList.toggle('light-mode', isLight);
-  if (themeBtn) themeBtn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
-}
-
-function detectInitialTheme() {
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved === 'light' || saved === 'dark') return saved;
-  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-  return prefersLight ? 'light' : 'dark';
-}
-
-function toggleTheme() {
-  const isLight = body.classList.contains('light-mode');
-  const next = isLight ? 'dark' : 'light';
-  localStorage.setItem(THEME_KEY, next);
-  applyTheme(next);
-}
-
-function initTheme() {
-  applyTheme(detectInitialTheme());
-  if (themeBtn) {
-    themeBtn.addEventListener('click', toggleTheme);
-    themeBtn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        toggleTheme();
-        e.preventDefault();
-      }
-    });
-  }
-}
-
-// ---- Counter animation (safe if elements exist) ----
-function animateCountersSafe() {
-  const counters = document.querySelectorAll('.count-up');
-  if (!counters.length) return;
-
-  const speed = 200;
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const counter = entry.target;
-        const target = parseInt(counter.dataset.count, 10) || 0;
-        let count = 0;
-
-        const update = () => {
-          const increment = Math.max(1, target / speed);
-          if (count < target) {
-            count += increment;
-            counter.textContent = Math.min(target, Math.ceil(count));
-            requestAnimationFrame(update);
-          } else {
-            counter.textContent = target;
-          }
-        };
-
-        update();
-        io.unobserve(counter);
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  counters.forEach((c) => io.observe(c));
-}
-
-// ---- Experience section reveal (safe if elements exist) ----
-function initializeExperienceSectionSafe() {
-  const expItems = document.querySelectorAll('.exp-item');
-  if (!expItems.length) return;
-
-  expItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.2}s`;
-    const ob = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
         });
-      },
-      { threshold: 0.1 }
-    );
-    ob.observe(item);
-  });
-}
+    }
 
-// ---- Contact form stub (prevents errors without backend) ----
-function wireContactForm() {
-  const form = document.querySelector('.contact-form');
-  if (!form) return;
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Form submitted successfully!');
-  });
-}
+    // --- Scroll: nav state, progress bar, active link, back-to-top ---
+    let ticking = false;
 
-// ---- Boot ----
-document.addEventListener('DOMContentLoaded', () => {
-  initA11y();
-  initTheme();
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-  // Controls: click + keyboard
-  if (controlsRoot) {
-    controlsRoot.addEventListener('click', onControlsClick);
-    controlsRoot.addEventListener('keydown', onControlsKeydown);
-  }
+            // Nav scrolled state
+            if (nav) {
+                nav.classList.toggle('scrolled', scrollY > 50);
+            }
 
-  initRouting();
-  animateCountersSafe();
-  initializeExperienceSectionSafe();
-  wireContactForm();
-});
+            // Scroll progress
+            if (scrollProgress && docHeight > 0) {
+                scrollProgress.style.width = ((scrollY / docHeight) * 100) + '%';
+            }
+
+            // Back to top
+            if (backToTop) {
+                backToTop.classList.toggle('visible', scrollY > 400);
+            }
+
+            // Active nav link
+            let currentSection = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if (scrollY >= top) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + currentSection);
+            });
+
+            ticking = false;
+        });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // --- Back to top ---
+    if (backToTop) {
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // --- Mobile menu ---
+    function closeMobileMenu() {
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            const isOpen = hamburger.classList.contains('open');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                hamburger.classList.add('open');
+                hamburger.setAttribute('aria-expanded', 'true');
+                mobileMenu.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    }
+
+    // --- Smooth scroll for nav links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+            const id = anchor.getAttribute('href');
+            if (id === '#') return;
+            const target = document.querySelector(id);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // --- Reveal on scroll (Intersection Observer) ---
+    if (reveals.length) {
+        const revealObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        );
+        reveals.forEach(el => revealObserver.observe(el));
+    }
+
+    // --- Counter animation ---
+    if (counters.length) {
+        const counterObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.count, 10);
+                    if (!target) return;
+
+                    const duration = 1500;
+                    const start = performance.now();
+
+                    function tick(now) {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.round(eased * target);
+                        if (progress < 1) requestAnimationFrame(tick);
+                    }
+
+                    requestAnimationFrame(tick);
+                    counterObserver.unobserve(el);
+                });
+            },
+            { threshold: 0.3 }
+        );
+        counters.forEach(c => counterObserver.observe(c));
+    }
+
+    // --- Contact form ---
+    if (contactForm) {
+        contactForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const orig = btn.textContent;
+            btn.textContent = 'Sent!';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.textContent = orig;
+                btn.disabled = false;
+                contactForm.reset();
+            }, 2000);
+        });
+    }
+
+    // --- Keyboard: Escape closes mobile menu ---
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('open')) {
+            closeMobileMenu();
+        }
+    });
+})();
